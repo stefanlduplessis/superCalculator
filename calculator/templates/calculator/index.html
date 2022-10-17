@@ -1,0 +1,59 @@
+{% extends "calculator/base.html" %}
+
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/calculator.css' %}" />
+{% endblock style %}
+    
+{% block content %}
+
+
+<div class="modal show bg-dark" id="calculator" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content border-0">
+            <div class="modal-body bg-dark p-0">
+                <div class="row">
+                    <div class="col-12"><input class="col-3 form-control grey-3" readonly type="text" id="result"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"><input class="btn grey-2 col-12" type="button" value="AC"></div>
+                    <div class="col-3"><input class="btn grey-2 col-12" type="button" value="+/-"></div>
+                    <div class="col-3"><input class="btn grey-2 col-12" type="button" value="%"></div>
+                    <div class="col-3"><input class="btn accent col-12" type="button" value="/"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="7"></div>
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="8"></div>
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="9"></div>
+                    <div class="col-3"><input class="btn accent col-12" type="button" value="x"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="4"></div>
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="5"></div>
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="6"></div>
+                    <div class="col-3"><input class="btn accent col-12" type="button" value="-"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="1"></div>
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="2"></div>
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="3"></div>
+                    <div class="col-3"><input class="btn accent col-12" type="button" value="+"></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><input class="btn grey-1 col-12" type="button" value="0"></div>
+                    <div class="col-3"><input class="btn grey-1 col-12" type="button" value="."></div>
+                    <div class="col-3"><input class="btn accent col-12" type="button" value="=" data-url="{% url 'calculate' %}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block javascript %}
+    <script>
+        let csrf_token = '{{csrf_token}}';
+    </script>
+    <script type="text/javascript" src="{% static "js/calculate.js" %}"></script> 
+{% endblock javascript %}
