@@ -1,0 +1,32 @@
+div.row > div {
+    padding: 2px !important;
+}
+
+#result {
+    border: 0;
+    height: 75px;
+    color: white;
+    font-size: 30px;
+}
+
+input[type=button] {
+    height: 75px;
+    color: white;
+    font-size: 30px;
+}
+
+.accent {
+    background-color: #f1a23b !important;
+}
+
+.grey-1 {
+    background-color: #767574 !important;
+}
+
+.grey-2 {
+    background-color: #5d5d5d !important;
+}
+
+.grey-3 {
+    background-color: #4f4f4f !important;
+}
